@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--- ICS2O-My first PWA --->
+<!--- ICS2O-With and or statements --->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,15 +8,16 @@
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content="Alex Nelson" />
     <meta name="theme-color" content="#FFFFFF" />
-    <title>GitHub page as PWA template</title>
     <link
       rel="canonical"
-      href="https://Alex-Nelson-1.github.io/ICS2O-PWA-Test/"
+      href="https://Alex-Nelson-1.github.io/ICS2O-UNIT5-03-JS-ELSE-IF/"
     />
-    <link rel="manifest" href="/ICS2O-PWA-Test/manifest.webmanifest" />
+    <link rel="manifest" href="/ICS2O-UNIT5-03-JS-ELSE-IF/manifest.webmanifest" />
     <link rel="stylesheet" href="./css/styles.css" />
     <!--- None blocking for Lighthouse report --->
     <!--- https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously --->
+
+    <!-- Links to Material -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -41,39 +42,84 @@
         href="https://code.getmdl.io/1.3.0/material.indigo-purple.min.css"
       />
     </noscript>
+    <!-- Favicon code -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" /> 
+    <title>And Or statements</title>
   </head>
-  <title>My first PWA</title>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">My first PWA</span>
+          <span class="mdl-layout-title"
+            >Calculate the angles of your triangle</span
+          >
         </div>
       </header>
       <main class="mdl-layout__content">
-        <p></p>
-        <img
-          src="./images/notebook-animation.svg"
-          alt="Computer"
-          width="25%"
-          height="25%"
-        />
-        <p></p>
-        <!-- Raised button with ripple -->
+        <!--Text field accepts input for side length A-->
+        <form action="#">
+          Side length A:
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="sideLengthA"
+            />
+            <!--This will control the textfields error message and label-->
+            <label class="mdl-textfield__label" for="sideLengthA">Side A</label>
+            <span class="mdl-textfield__error">Numbers Only!</span>
+          </div>
+          cm
+        </form>
+        <!--Text field accepts input for side length B-->
+        <form action="#">
+          Side length B:
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="sideLengthB"
+            />
+            <!--This will control the textfields error message and label-->
+            <label class="mdl-textfield__label" for="sideLengthB">Side B</label>
+            <span class="mdl-textfield__error">Numbers Only!</span>
+          </div>
+          cm
+        </form>
+        <!--Text field accepts input for height-->
+        <form action="#">
+          Side Length C:
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="sideLengthC"
+            />
+            <!--This will control the textfields error message and label-->
+            <label class="mdl-textfield__label" for="sideLengthC">Side C</label>
+            <span class="mdl-textfield__error">Letters Only!</span>
+          </div>
+          cm
+        </form>
+        <!-- Accent-colored raised button that controls JS function -->
         <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="myButtonClicked()"
+          class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
+          onclick="calculateArea()"
         >
-          Say "Hello, World!"
+          Calculate Area
         </button>
-        <!-- basic text -->
-        <p></p>
-        <div id="hello-world"></div>
+        <!-- Output -->
+        <div id="angleA"></div>
+        <div id="angleB"></div>
+        <div id="angleC"></div>
+        <div id="angleSum"></div>
       </main>
     </div>
   </body>
