@@ -8,8 +8,8 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
-    scope: "/ICS2O-PWA-Test/",
+  navigator.serviceWorker.register("/ISC2O-UNIT5-05-JS-NESTED-IF-STATEMENTS/sw.js", {
+    scope: "/ISC2O-UNIT5-05-JS-NESTED-IF-STATEMENTS/",
   })
 }
 
@@ -45,9 +45,22 @@ function calculateArea() {
     Number(angleB.toFixed(2)) +
     Number(angleC.toFixed(2))
 
-  //Output Variables
-  document.getElementById("angleA").innerHTML = "Angle A = " + angleA + "°"
-  document.getElementById("angleB").innerHTML = "Angle B = " + angleB + "°"
-  document.getElementById("angleC").innerHTML = "Angle C = " + angleC + "°"
-  document.getElementById("angleSum").innerHTML = sumOfAngles + "°"
+  //Output functions
+  if (sumOfAngles != 180) {
+    document.getElementById("output").innerHTML = "Not a triangle"
+  }
+  //Function for Equilateral triangles
+  else if (angleA == angleB && angleA == angleC) {
+  document.getElementById("output").innerHTML = "Equilateral triangle" }  
+  //Function for Isoscolese triangles
+  else if (angleA == angleB || angleA == angleC || angleB == angleC) {
+  document.getElementById("output").innerHTML = "Isoscolese triangle" }
+  //Function for Scalene triangles
+  else if (angleA !== angleB && angleA !== angleC && angleC !== angleB) {
+  document.getElementById("output").innerHTML = "Scalene triangle" }
+  //if the input somehow bypass all checks
+  else {
+    document.getElementById("output").innerHTML = "You have somehow broken the script"
+  }
+  console.log(sumOfAngles)
 }

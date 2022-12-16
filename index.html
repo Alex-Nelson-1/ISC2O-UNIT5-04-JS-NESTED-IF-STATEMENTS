@@ -4,23 +4,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="My first PWA" />
+    <meta name="description" content="Website with and/or" />
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content="Alex Nelson" />
     <meta name="theme-color" content="#FFFFFF" />
     <link
       rel="canonical"
-      href="https://Alex-Nelson-1.github.io/ICS2O-UNIT5-03-JS-ELSE-IF/"
+      href="https://Alex-Nelson-1.github.io/ISC2O-UNIT5-05-JS-NESTED-IF-STATEMENTS/"
     />
     <link
       rel="manifest"
-      href="/ICS2O-UNIT5-03-JS-ELSE-IF/manifest.webmanifest"
+      href="/ISC2O-UNIT5-05-JS-NESTED-IF-STATEMENTS/manifest.webmanifest"
     />
     <link rel="stylesheet" href="./css/styles.css" />
     <!--- None blocking for Lighthouse report --->
     <!--- https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously --->
 
-    <!-- Links to Material -->
+    <!-- Links to Material Design Lite-->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -52,8 +52,10 @@
     <title>And Or statements</title>
   </head>
   <body>
+    <!-- linkingto js folder/ linking to MDL -->
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
+      <!-- Header code -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
@@ -63,6 +65,7 @@
         </div>
       </header>
       <main class="mdl-layout__content">
+        <img src="./images/triangle-download.png" alt="Triangle Sides">
         <!--Text field accepts input for side length A-->
         <form action="#">
           Side length A:
@@ -95,7 +98,7 @@
           </div>
           cm
         </form>
-        <!--Text field accepts input for height-->
+        <!--Text field accepts input for side length c -->
         <form action="#">
           Side Length C:
           <div class="mdl-textfield mdl-js-textfield">
@@ -111,18 +114,15 @@
           </div>
           cm
         </form>
-        <!-- Accent-colored raised button that controls JS function -->
+        <!-- Accent-colored raised button that controls the calculation function -->
         <button
           class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
           onclick="calculateArea()"
         >
-          Calculate Area
+          Calculate Triangle
         </button>
         <!-- Output -->
-        <div id="angleA"></div>
-        <div id="angleB"></div>
-        <div id="angleC"></div>
-        <div id="angleSum"></div>
+        <div id="output"></div>
       </main>
     </div>
   </body>
