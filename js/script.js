@@ -8,9 +8,12 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ISC2O-UNIT5-05-JS-NESTED-IF-STATEMENTS/sw.js", {
-    scope: "/ISC2O-UNIT5-05-JS-NESTED-IF-STATEMENTS/",
-  })
+  navigator.serviceWorker.register(
+    "/ISC2O-UNIT5-05-JS-NESTED-IF-STATEMENTS/sw.js",
+    {
+      scope: "/ISC2O-UNIT5-05-JS-NESTED-IF-STATEMENTS/",
+    }
+  )
 }
 
 /**
@@ -51,16 +54,20 @@ function calculateArea() {
   }
   //Function for Equilateral triangles
   else if (angleA == angleB && angleA == angleC) {
-  document.getElementById("output").innerHTML = "Equilateral triangle" }  
+    document.getElementById("output").innerHTML = "Equilateral triangle"
+  }
   //Function for Isoscolese triangles
   else if (angleA == angleB || angleA == angleC || angleB == angleC) {
-  document.getElementById("output").innerHTML = "Isoscolese triangle" }
+    document.getElementById("output").innerHTML = "Isoscolese triangle"
+  }
   //Function for Scalene triangles
   else if (angleA !== angleB && angleA !== angleC && angleC !== angleB) {
-  document.getElementById("output").innerHTML = "Scalene triangle" }
+    document.getElementById("output").innerHTML = "Scalene triangle"
+  }
   //if the input somehow bypass all checks
   else {
-    document.getElementById("output").innerHTML = "You have somehow broken the script"
+    document.getElementById("output").innerHTML =
+      "You have somehow broken the script"
   }
   console.log(sumOfAngles)
 }
